@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "macFrameworkPath": [
+              "/Library/Frameworks",
+              "/System/Library/Frameworks"
+            ],
+            "includePath": [
+              "${workspaceFolder}/src",
+              "${workspaceFolder}/lib",
+              "${workspaceFolder}/test",
+              "/usr/local/include/**"
+            ],
+            "defines": [
+              "_DEBUG"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

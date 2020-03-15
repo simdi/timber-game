@@ -1,0 +1,35 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "sh",
+      "args": [
+        "-c",
+        "rm -rf build && mkdir -p build && cd build && cmake ..",
+        "-g",
+        "-o",
+        "${workspaceFolder}/build/${workspaceFolderBasename}"
+      ],
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "run make",
+      "type": "shell",
+      "command": "sh",
+      "args": ["-c", "cd build && make"],
+    },
+    {
+      "label": "build and run make",
+      "dependsOrder": "sequence",
+      "dependsOn": ["build", "run make"]
+    }
+  ]
+}
