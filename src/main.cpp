@@ -4,22 +4,20 @@ int main()
 {
 	PlatformHelper platform;
 
-#if defined(_DEBUG)
-	std::cout << "Hello World!" << std::endl;
-#endif
-
 	sf::RenderWindow window;
 	// in Windows at least, this must be called before creating the window
-	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
+	// float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
+  sf::VideoMode vm(1920, 1039);
+  // sf::VideoMode vm(1920.0f * screenScalingFactor, 1039.0f * screenScalingFactor);
 	// Use the screenScalingFactor
-	window.create(sf::VideoMode(200.0f * screenScalingFactor, 200.0f * screenScalingFactor), "SFML works!");
+	window.create(vm, "SFML works!");
 	platform.setIcon(window.getSystemHandle());
 
 	sf::CircleShape shape(window.getSize().x / 2);
 	shape.setFillColor(sf::Color::White);
 
 	sf::Texture shapeTexture;
-	shapeTexture.loadFromFile("content/sfml.png");
+	shapeTexture.loadFromFile("graphics/background.png");
 	shape.setTexture(&shapeTexture);
 
 	sf::Event event;
