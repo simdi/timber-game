@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-g -std=c++14")
-project(Timber)
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+project(${ProjectName})
 file(GLOB SOURCES src/*.cpp)
-add_executable(timber ${SOURCES})
+add_executable(${ProjectName} ${SOURCES})
